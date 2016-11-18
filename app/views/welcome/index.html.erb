@@ -1,0 +1,18 @@
+<h1> Welcome to My Garage!<h1>
+<h3>Please sign up below</h3>
+
+<%= form_for :user, url: users_path do |f| %>
+  <p>
+    <%= f.label :user %><br>
+    <%= f.text_field :user %>
+  </p>
+
+  <p>
+    <%= f.label :password %><br>
+    <%= f.text_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>

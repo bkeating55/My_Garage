@@ -1,0 +1,36 @@
+<%= form_for :garage, url: garage_index_path do |f| %>
+
+  <% if @garage.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@garage.errors.count, "error") %>
+prohibited
+      this vehicle from being saved:
+    </h2>
+    <ul>
+      <% @garage.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+<p>
+  <%= f.label :make %><br>
+  <%= f.text_field :make %>
+</p>
+
+<p>
+  <%= f.label :model %><br>
+  <%= f.text_field :model %>
+</p>
+
+<p>
+  <%= f.label :year %><br>
+  <%= f.text_field :year %>
+</p>
+
+<p>
+ <%= f.submit "Save Vehicle" %>
+</p>
+
+<% end %>
